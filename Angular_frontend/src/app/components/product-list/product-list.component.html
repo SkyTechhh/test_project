@@ -1,0 +1,25 @@
+
+
+
+<div class="container">
+  <div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush" *ngFor="let item of products">
+      <li class="list-group-item">
+        <p><strong>Product ID : </strong>{{item.id}}</p>
+        <p><strong>Product Name : </strong>{{item.productName}}</p>
+        <p><strong>Category ID : </strong>{{item.CategoryID}}</p>
+        <p><strong>Category Name : </strong>{{item.name}}</p>
+        <a class="btn btn-success" [routerLink]="['/product', item.id]">View</a>
+        <a class="btn btn-danger float-right" [routerLink]="['/product', item.id, 'edit']">Edit</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="mt-4 mb-4">
+    <a class="btn btn-primary" (click)="prevPage(pageNum)">Prev</a>
+    <a class="btn btn-primary float-right" (click)="nextPage(pageNum)">Next</a>
+  </div>
+</div>
+
+
+
